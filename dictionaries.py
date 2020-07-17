@@ -124,12 +124,22 @@ def get_sum_zero_pairs(numbers):
     """
 
     list1 = []
+    
+    set1 = set(numbers)
+    set1 = list(set1)
 
-    for i in range(len(numbers)):
-        for j in range(i+1, len(numbers)):
+    for i in range(len(set1)):
+        for j in range(i+1, len(set1)):
 
-            if numbers[i] + numbers[j] == 0:
-                list1.append([numbers[i], numbers[j]])
+            if set1[i] + set1[j] == 0:
+                list1.append([set1[i], set1[j]])
+                
+    # numbers = sorted(numbers)
+    # set_num = set(numbers)
+
+    # for number in numbers:
+    #     if -number in set_num:
+    #         list1.append([number, -number])
     
     return list1
 

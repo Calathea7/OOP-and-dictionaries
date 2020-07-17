@@ -133,7 +133,7 @@ def get_sum_zero_pairs(numbers):
 
             if set1[i] + set1[j] == 0:
                 list1.append([set1[i], set1[j]])
-                
+
     # numbers = sorted(numbers)
     # set_num = set(numbers)
 
@@ -169,7 +169,30 @@ def top_chars(phrase):
 
     """
 
-    return []
+    letter_counts = {}
+    
+    list1 = []
+    values = []
+    keys = []
+
+    for letter in phrase:
+        if letter.isalpha():
+            letter_counts[letter] = letter_counts.get(letter, 0) + 1
+
+    # print(letter_counts)
+        
+    keys = list(letter_counts.keys())
+    values = list(letter_counts.values())
+
+    for v in values:
+
+        if v == max(values):
+            list1.append(keys[values.index(v)])
+            # ind = values.index(v)
+            # list1.append(keys[ind])
+
+    return list1
+
 
 #####################################################################
 # You can ignore everything below this.

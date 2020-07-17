@@ -41,6 +41,11 @@ def without_duplicates(words):
         >>> type(without_duplicates([111111, 2, 33333, 2]))
         <class 'list'>
     """
+    
+    no_dupes = set(words)
+    no_dupes = list(no_dupes)
+
+    return no_dupes
 
 
 def find_unique_common_items(items1, items2):

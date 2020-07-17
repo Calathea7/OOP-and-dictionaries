@@ -123,7 +123,15 @@ def get_sum_zero_pairs(numbers):
         [[-1, 1], [0, 0]]
     """
 
-    return []
+    list1 = []
+
+    for i in range(len(numbers)):
+        for j in range(i+1, len(numbers)):
+
+            if numbers[i] + numbers[j] == 0:
+                list1.append([numbers[i], numbers[j]])
+    
+    return list1
 
 
 def top_chars(phrase):

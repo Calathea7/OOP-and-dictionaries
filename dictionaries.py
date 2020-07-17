@@ -41,7 +41,7 @@ def without_duplicates(words):
         >>> type(without_duplicates([111111, 2, 33333, 2]))
         <class 'list'>
     """
-    
+
     no_dupes = set(words)
     no_dupes = list(no_dupes)
 
@@ -81,7 +81,19 @@ def find_unique_common_items(items1, items2):
         [2]
     """
 
-    return set()
+    set1 = set(items1)
+    set2 = set(items2)
+
+    set3 = []
+
+    for item1 in items1:
+        for item2 in items2:
+            if item1 == item2:
+                set3.append(item1)
+
+    set3 = set(set3)
+
+    return set3
 
 
 def get_sum_zero_pairs(numbers):

@@ -22,9 +22,9 @@ class Question:
         user_input = input("Your answer here: ")
         
         if user_input == self.correct_answer:
-            print(True)
+            return True
         else:
-            print(False)
+            return False
 
 class Exam:
     
@@ -35,4 +35,31 @@ class Exam:
 
     def add_question(self, question):
 
-       self.questions.append(question.question)
+       self.questions.append(question)
+
+    def administer(self):
+
+        score = 0
+        q_num = 0
+        
+        for q in self.questions:
+            if q.ask_and_evaluate():
+                score += 1
+            else:
+                score += 0
+            q_num += 1
+
+        return print((score/q_num) * 100)
+
+
+
+
+
+
+
+
+
+
+
+
+
